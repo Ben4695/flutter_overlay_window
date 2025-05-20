@@ -40,6 +40,7 @@ class FlutterOverlayWindow {
   ///
   /// `startPosition` the overlay start position and default is null
   static Future<void> showOverlay({
+    required String entryPoint,
     int height = WindowSize.fullCover,
     int width = WindowSize.matchParent,
     OverlayAlignment alignment = OverlayAlignment.center,
@@ -54,6 +55,7 @@ class FlutterOverlayWindow {
     await _channel.invokeMethod(
       'showOverlay',
       {
+        "entryPoint": entryPoint,
         "height": height,
         "width": width,
         "alignment": alignment.name,
